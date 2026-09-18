@@ -12,7 +12,7 @@ public class PlayerInput : MonoBehaviour
         CacheComponents();
     }
 
-    private void update()
+    private void Update()
     {
         ReadMoveInput();
     }
