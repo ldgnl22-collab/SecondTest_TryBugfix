@@ -17,11 +17,12 @@ public class Bullet : MonoBehaviour
     {
         CountLifeTime();
     }
-
+    // 10
     public void Launch(Vector3 startPosition, Vector3 direction)
     {
         transform.position = startPosition;
         _elapsed = 0f;
+        _body.velocity = new Vector3(0, 0, 0);
         _body.AddForce(direction * _shootPower);
     }
 

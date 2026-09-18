@@ -13,7 +13,7 @@ public class PlayerMover : MonoBehaviour
     {
         CacheComponents();
     }
-
+    
     private void Update()
     {
         MoveByTransform();
@@ -26,7 +26,7 @@ public class PlayerMover : MonoBehaviour
             Debug.Log("PlayerMover: 벽에 닿았습니다.");
         }
     }
-
+    // [Bug-02] 원인 : 방향벡터를 정규화 하지 않았습니다 / 수정 : 'normalized'로 정규화
     public void SetDirection(Vector3 direction)
     {
         _direction = direction.normalized;

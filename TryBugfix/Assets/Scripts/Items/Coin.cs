@@ -5,7 +5,7 @@ public class Coin : MonoBehaviour
     private const string TAG_PLAYER = "Player";
 
     [SerializeField] private float _lifeSeconds = 6f;
-
+    
     private void Start()
     {
         ScheduleDestroy();

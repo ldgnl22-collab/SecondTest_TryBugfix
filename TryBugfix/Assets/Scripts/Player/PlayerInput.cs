@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
     {
         CacheComponents();
     }
-
+    // [Bug-01] 원인 : update의 'u'가 소문자로 되어있습니다 / 수정 : 해당 'u'를 대문자로 변경
     private void Update()
     {
         ReadMoveInput();

@@ -80,7 +80,8 @@ public class PlayerHealth : MonoBehaviour
         _isInvincible = false;
         EndBlink();
     }
-
+    // [Bug-08] 원인 : 'StopCoroutine'을 해도 정지만 되고 지워지지 않아서 발생
+    // / 수정 : '_blinkRoutine'필드로 직접 'null'로 변경해 주었습니다.
     private void BeginBlink()
     {
         if (_blinkRoutine != null) return;

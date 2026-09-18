@@ -25,7 +25,7 @@ public class PlayerShooter : MonoBehaviour
         {
             return;
         }
-
+        
         bullet.GetComponent<Bullet>().Launch(_muzzle.position, Vector3.forward);
     }
 }

@@ -24,7 +24,7 @@ public class BulletPool : MonoBehaviour
             {
                 continue;
             }
-
+            
             _pool[i].SetActive(true);
             return _pool[i];
         }
