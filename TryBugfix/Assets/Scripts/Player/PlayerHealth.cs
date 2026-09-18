@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     private Renderer _renderer;
     private int _health;
     private bool _isInvincible;
+    
+    private Coroutine _blinkRoutine;
 
     private void Awake()
     {
@@ -75,18 +77,20 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator InvincibleRoutine()
     {
         yield return new WaitForSeconds(_invincibleSeconds);
-        EndBlink();
         _isInvincible = false;
+        EndBlink();
     }
 
     private void BeginBlink()
     {
-        StartCoroutine(BlinkRoutine());
+        if (_blinkRoutine != null) return;
+        _blinkRoutine = StartCoroutine(BlinkRoutine());
     }
 
     private void EndBlink()
     {
-        StopCoroutine(BlinkRoutine());
+        StopCoroutine(_blinkRoutine);
+        _blinkRoutine = null;
         _renderer.enabled = true;
     }
 

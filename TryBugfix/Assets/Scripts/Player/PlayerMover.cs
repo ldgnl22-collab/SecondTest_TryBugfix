@@ -29,7 +29,7 @@ public class PlayerMover : MonoBehaviour
 
     public void SetDirection(Vector3 direction)
     {
-        _direction = direction;
+        _direction = direction.normalized;
     }
 
     private void CacheComponents()
